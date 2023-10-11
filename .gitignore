@@ -1,0 +1,8 @@
+#Ignore eslint.js
+.eslintrc.js
+
+#Ignore json files
+*.json
+
+#Ignore node_modules folder
+node_modules/
