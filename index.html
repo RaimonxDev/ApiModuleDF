@@ -3,15 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task List</title>
+    <title>Conversor de monedas</title>
     <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="stylesheet" href="./assets/styles/style.css" />
   </head>
   <body class="w-full">
-    <main class="flex flex-col gap-4 max-w-3xl mx-auto rounded-lg shadow-md mt-4 px-8 py-2">
-      <hr>
+    <main class="flex flex-col gap-4 max-w-3xl mx-auto rounded-lg shadow-md mt-4 px-8 py-6">
       <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-sky-700 font-bold text-3xl text-center">Conversor de monedas Nacional</h1>
       <hr>
 
@@ -22,19 +21,19 @@
       <select class="rounded-lg focus:ring-sky-500 focus:border-sky-500" title="chooseCurrency" name="chooseCurrency" id="chooseCurrency">
       </select>
       <div class="mx-auto">
-        <button  id="btnSearch" type="button" class="inline-flex items-center rounded-md px-2.5 py-1.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 bg-sky-500">
+        <button id="btnSearch" type="button" class="inline-flex items-center rounded-md px-2.5 py-1.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:bg-gray-300 disabled:text-gray-600 focus-visible:outline-sky-600 bg-sky-500">
          Calcular Tasa
         </button>
       </div>
-      <p class="text-gray-600 font-bold">Resultado: <span class="text-green-600 font-medium" id="resultOperation"></span> </p>
+      <div id="loading" class="lds-dual-ring"></div>
+      <p id="textError" class="text-red-500 text-center hidden"> Error al obtener datos </p>
+      
 
+      <p id="resultado" class="text-gray-600 font-bold">Resultado: <span class="text-green-600 font-medium" id="resultOperation"></span> </p>
       <canvas id="charts" width="400" height="400">
 
       </canvas>
-    
-    
-    
-    
+      
       <script src="./assets/js/script.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </main>
